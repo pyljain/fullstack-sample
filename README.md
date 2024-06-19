@@ -1,30 +1,19 @@
-# React + TypeScript + Vite
+# Full stack example
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Java multi-module + React full stack repository showcasing how a polyglot stack can be managed using build tools that are
+native to the respective languages used in the repository. A `Makefile` is used to organise the typical tasks that may be relevant to testing, building and running these services. It also facilitates local development as it automates spinning up the stack with ease across platforms. 
 
-Currently, two official plugins are available:
+> NOTE: this repository structure works well with IDEs as both Gradle files are at the root as are Node dependency files.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+To build both the Java and React services, run:
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```sh
+make
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+To build only the Java service, run:
+
+```sh
+make build-java
+```
+
